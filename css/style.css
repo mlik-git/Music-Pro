@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1e2024 0%, #18181d 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.music-player {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.player-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.player-header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.category-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.category-nav button {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-nav button.active,
+.category-nav button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.player-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.now-playing {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.album-art {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 20px;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.vinyl-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background: #000;
+    border-radius: 50%;
+    border: 20px solid rgba(255, 255, 255, 0.1);
+}
+
+.track-info {
+    margin-bottom: 20px;
+}
+
+.track-name {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.artist-name {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.controls {
+    width: 100%;
+    max-width: 500px;
+}
+
+.progress-container {
+    margin-bottom: 20px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4);
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+.time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.buttons button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.buttons button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.play-pause {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4) !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.playlist {
+    margin-top: 40px;
+}
+
+.playlist h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.track-list {
+    list-style: none;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.track-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.track-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.track-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .music-player {
+        padding: 20px;
+    }
+
+    .album-art {
+        width: 200px;
+        height: 200px;
+    }
+
+    .buttons button {
+        font-size: 20px;
+    }
+}
